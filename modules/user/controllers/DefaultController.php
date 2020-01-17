@@ -1,11 +1,11 @@
 <?php
 
-namespace app\modules\admin\controllers;
+namespace app\modules\user\controllers;
 use yii\filters\AccessControl;
 use yii\web\Controller;
-use app\models\Checkout;
+use app\models\Item;
 /**
- * Default controller for the `admin` module
+ * Default controller for the `user` module
  */
 class DefaultController extends Controller
 {
@@ -30,9 +30,11 @@ class DefaultController extends Controller
      * Renders the index view for the module
      * @return string
      */
-    public function actionIndex()
+
+
+    public function actionIndex($id)
     {
-        $checkout = Checkout::find()->all();
-        return $this->render('index', compact('checkout'));
+        $item = Item::findOne(['id' => $id]);
+        return $this->render('index', compact('item'));
     }
 }
