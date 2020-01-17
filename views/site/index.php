@@ -7,6 +7,7 @@ $this->title = 'My Yii Application';
 <div class="site-index">
 
     <div class="jumbotron">
+        <?php var_dump(Yii::$app->user->identity)?>
         <h1>Welcome to liqpay testing!</h1>
     </div>
 
